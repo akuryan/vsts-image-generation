@@ -151,24 +151,12 @@
         },
         {
             "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Install-Wix.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
             "valid_exit_codes": [
                 0,
                 3010
             ],
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-NET472.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-ServiceFabricSDK.ps1"
             ]
         },
         {
@@ -190,19 +178,7 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Validate-Wix.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-NET472.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-ServiceFabricSDK.ps1"
             ]
         },
         {
@@ -232,24 +208,6 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-Ruby.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-Svn.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Chrome.ps1"
             ]
         },
@@ -274,31 +232,7 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-JavaTools.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-Cmake.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-DACFx.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Update-AndroidSDK.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-MysqlCli.ps1"
             ]
         },
         {
@@ -354,12 +288,6 @@
             ]
         },
         {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Install-AzureCosmosDbEmulator.ps1"
-            ]
-        },
-        {
             "type": "windows-restart",
             "restart_timeout": "30m"
         },
@@ -390,24 +318,6 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-Go.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-Ruby.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-Svn.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Chrome.ps1"
             ]
         },
@@ -432,18 +342,6 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-JavaTools.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-Cmake.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-DACFx.ps1"
             ]
         },
@@ -451,12 +349,6 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-DotnetSDK.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-MysqlCli.ps1"
             ]
         },
         {
@@ -481,12 +373,6 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Miniconda.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-AzureCosmosDbEmulator.ps1"
             ]
         },
         {
