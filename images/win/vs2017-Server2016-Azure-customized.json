@@ -121,7 +121,7 @@
                 3010
             ],
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Install-VS2017.ps1"
+                "{{ template_dir }}/scripts/Installers/Vs2015/Install-VS2015.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
@@ -137,7 +137,7 @@
                 3010
             ],
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2015/Install-VS2015.ps1"
+                "{{ template_dir }}/scripts/Installers/Vs2017/Install-VS2017.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
