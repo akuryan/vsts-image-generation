@@ -121,22 +121,6 @@
                 3010
             ],
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2015/Install-VS2015.ps1"
-            ],
-            "elevated_user": "{{user `install_user`}}",
-            "elevated_password": "{{user `install_password`}}"
-        },
-        {
-            "type": "windows-restart",
-            "restart_timeout": "30m"
-        },
-        {
-            "type": "powershell",
-            "valid_exit_codes": [
-                0,
-                3010
-            ],
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Vs2017/Install-VS2017.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
