@@ -137,7 +137,7 @@
                 3010
             ],
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Install-SSDT.ps1"
+                "{{ template_dir }}/scripts/Installers/Vs2017/Install-SSDT-choco.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
