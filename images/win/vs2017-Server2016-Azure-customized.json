@@ -134,14 +134,14 @@
             "type": "powershell",
             "valid_exit_codes": [
                 0,
-                3010,
-                2147943515
+                3010
             ],
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Vs2017/Install-SSDT.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
-            "elevated_password": "{{user `install_password`}}"
+            "elevated_password": "{{user `install_password`}}",
+            "pause_before": "120s"
         },
         {
             "type": "windows-restart",
