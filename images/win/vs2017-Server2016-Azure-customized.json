@@ -85,6 +85,12 @@
         {
             "type": "powershell",
             "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Utils.ps1"
+            ]
+        },        
+        {
+            "type": "powershell",
+            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Vs2017/Install-ContainersFeature.ps1"
             ]
         },
