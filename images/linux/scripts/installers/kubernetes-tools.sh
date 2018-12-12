@@ -5,7 +5,7 @@
 ##  Desc:  Installs kubectl, helm
 ################################################################################
 
-## Source the helpers for use with the script
+# Source the helpers for use with the script
 source $HELPER_SCRIPTS/document.sh
 source $HELPER_SCRIPTS/apt.sh
 
@@ -18,13 +18,13 @@ apt-get update
 apt-get install -y kubectl
 
 # Install Helm
-curl -sL https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-rc.3-linux-amd64.tar.gz -o helm-v2.10.0-rc.3-linux-amd64.tar.gz
-tar -zxvf helm-v2.10.0-rc.3-linux-amd64.tar.gz
+curl -sL https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz -o helm-v2.11.0-linux-amd64.tar.gz
+tar -zxvf helm-v2.11.0-linux-amd64.tar.gz
 chmod +x linux-amd64/helm
 mv linux-amd64/helm /usr/local/bin/helm
-rm helm-v2.10.0-rc.3-linux-amd64.tar.gz
+rm helm-v2.11.0-linux-amd64.tar.gz
 
-## Run tests to determine that the software installed as expected
+# Run tests to determine that the software installed as expected
 echo "Testing to make sure that script performed as expected, and basic scenarios work"
 if ! command -v kubectl; then
     echo "kubectl was not installed"
@@ -36,7 +36,7 @@ if ! command -v helm; then
     exit 1
 fi
 
-## Document what was added to the image
+# Document what was added to the image
 echo "Lastly, documenting what we added to the metadata file"
 DocumentInstalledItem "kubectl ($(kubectl version --short |& head -n 1))"
 DocumentInstalledItem "helm ($(helm version --short |& head -n 1))"
