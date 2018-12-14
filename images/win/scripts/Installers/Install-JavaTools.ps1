@@ -10,6 +10,8 @@ $azulJDK11Uri = 'https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.1/
 
 cd $env:TEMP
 
+[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
+
 Invoke-WebRequest -UseBasicParsing -Uri $azulJDK8Uri -OutFile azulJDK8.zip
 Invoke-WebRequest -UseBasicParsing -Uri $azulJDK11Uri -OutFile azulJDK11.zip
 
