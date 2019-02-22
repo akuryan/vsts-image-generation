@@ -17,7 +17,7 @@
         "helper_script_folder": "C:\\Program Files\\WindowsPowerShell\\Modules\\",
         "commit_id": "LATEST",
         "install_user": "installer",
-        "install_password": "P@ssw0rd1"
+        "install_password": null
     },
     "builders": [
         {
@@ -88,7 +88,7 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Install-ContainersFeature.ps1"
+                "{{ template_dir }}/scripts/Installers/Install-ContainersFeature.ps1"
             ]
         },
         {
@@ -98,7 +98,13 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Install-Docker.ps1"
+                "{{ template_dir }}/scripts/Installers/Install-Docker.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-PowershellCore.ps1"
             ]
         },
         {
@@ -108,7 +114,13 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Validate-Docker.ps1"
+                "{{ template_dir }}/scripts/Installers/Validate-Docker.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-PowershellCore.ps1"
             ]
         },
         {
@@ -250,6 +262,10 @@
         },
         {
             "type": "powershell",
+	    "environment_vars": [
+		"GO_VERSIONS=1.9.7,1.10.8,1.11.5",
+		"GO_DEFAULT=1.11.5"
+	    ],
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
             ]
@@ -288,6 +304,26 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-SeleniumWebDrivers.ps1"
+            ]
+        },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Enable-DeveloperMode.ps1"
+            ],
+            "elevated_user": "{{user `install_user`}}",
+            "elevated_password": "{{user `install_password`}}"
+        },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-WinAppDriver.ps1"
+            ]
+        },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-WinAppDriver.ps1"
             ]
         },
         {
@@ -432,6 +468,12 @@
                 "{{ template_dir }}/scripts/Installers/Install-CloudFoundryCli.ps1"
             ]
         },
+		{
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
+            ]
+        },
         {
             "type": "windows-restart",
             "restart_timeout": "30m"
@@ -468,6 +510,10 @@
         },
         {
             "type": "powershell",
+	    "environment_vars": [
+        	"GO_VERSIONS=1.9.7,1.10.8,1.11.5",
+        	"GO_DEFAULT=1.11.5"
+    	    ],
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Go.ps1"
             ]
@@ -547,7 +593,7 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-MinGW.ps1"
+                "{{ template_dir }}/scripts/Installers/Validate-SQLPowerShellTools.ps1"
             ]
         },
         {
@@ -566,6 +612,12 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-AzureCosmosDbEmulator.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-7zip.ps1"
             ]
         },
         {
@@ -620,6 +672,12 @@
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-CloudFoundryCli.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Vcpkg.ps1"
             ]
         },
         {

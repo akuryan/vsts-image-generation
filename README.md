@@ -1,12 +1,35 @@
-# Visual Studio Team Services Hosted Images
-![Banner](/docs/resources/ImageGenBanner.png "Banner")
+
+# ![Azure Pipelines](/docs/resources/DevOpsIconPipelines40.png "Azure Pipelines") Azure Pipelines VM images for Microsoft-hosted CI/CD
 
 ## Overview
 
-This repo contains the scripts and instructions to generate the images used for the VSTS hosted pool images.  Specifically for Hosted VS2017, VS2015 and Linux.
+This repo contains scripts that generate the Linux and Windows virtual machine images used by [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/?nav=min) for [Microsoft-hosted CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=vsts&tabs=yaml). The macOS image scripts are not kept here, but its contents are documented here. The images are generated using [Packer](https://www.packer.io/).
 
+# Image contents
 
-# Contributing
+- [macOS 10.13](images/macos/macos-Readme.md)
+- [Ubuntu 16.04](images/linux/Ubuntu1604-README.md)
+- [VS 2019 + Windows Server 2019](images/win/Vs2019-Server2019-Readme.md)
+- [VS 2017 + Windows Server 2016](images/win/Vs2017-Server2016-Readme.md)
+- [VS 2015 + Windows Server 2012 R2](images/win/Vs2015-Server2012R2-Readme.md)
+- [Windows Container 1803](images/win/WindowsContainer1803-Readme.md)
+
+## Issues and requests
+
+If you have an issue or request for an image, please create an issue in this repo. To add or change a tool yourself, see [Contributing](#contributing).
+
+## Image generation help
+
+### Linux
+
+- [How to use Packer to create Linux VM images in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/build-image-with-packer)
+
+### Windows
+
+- [Instructions to build VS2017-Win16 images](docs/vs2017.md)
+- [How to use Packer to create Windows VM images in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/build-image-with-packer)
+
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -20,23 +43,19 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Issues and Requests
+## Legal Notices
 
-If you have an issue with one of the images or you have a request to add or change a tool on one of our images:
+Microsoft and any contributors grant you a license to the Microsoft documentation and other content
+in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
+see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
+[LICENSE-CODE](LICENSE-CODE) file.
 
-  1.  Create an issue in this repo
-  2.  Wait for approval or comments.  Our images have real constraints.  Primarily, disk space.  So it's a value (broad adoption of that tool) vs. cost (disk space and on-going maintenance) proposition.  Specify whether you will create a PR or if you are requesting for us to add it to the image.
-  3.  Optionally, create a PR.
+Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation
+may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries.
+The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks.
+Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
 
-## Generating Images
+Privacy information can be found at https://privacy.microsoft.com/en-us/
 
-The images are generated using [Packer](https://www.packer.io/).
-
-## Windows
-[How to use Packer to create Windows virtual machine images in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/build-image-with-packer)
-## Linux
-[How to use Packer to create Linux virtual machine images in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/build-image-with-packer)
-
-## Instructions to Build Images
-[VS2017](docs/vs2017.md)
-
+Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents,
+or trademarks, whether by implication, estoppel or otherwise.
