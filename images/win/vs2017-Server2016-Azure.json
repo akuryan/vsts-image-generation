@@ -131,6 +131,10 @@
         },
         {
             "type": "powershell",
+            "inline": ["choco install vcredist140 -y"]
+        },
+        {
+            "type": "powershell",
             "valid_exit_codes": [
                 0,
                 3010
@@ -191,12 +195,6 @@
             ]
         },
         {
-            "type": "powershell",
-            "scripts":[
-                "{{ template_dir }}/scripts/Installers/Vs2017/Install-Python.ps1"
-            ]
-        },
-        {
             "type": "windows-restart",
             "restart_timeout": "30m"
         },
@@ -233,12 +231,6 @@
         {
             "type": "powershell",
             "scripts":[
-                "{{ template_dir }}/scripts/Installers/Validate-Python.ps1"
-            ]
-        },
-        {
-            "type": "powershell",
-            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Update-DotnetTLS.ps1"
             ]
         },
@@ -251,7 +243,19 @@
         {
             "type": "powershell",
             "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-AzureDevOpsCli.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Download-ToolCache.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Vs2017/Install-Python.ps1"
             ]
         },
         {
@@ -262,15 +266,15 @@
         },
         {
             "type": "powershell",
-	    "environment_vars": [
-		"GO_VERSIONS=1.9.7,1.10.8,1.11.5",
-		"GO_DEFAULT=1.11.5"
-	    ],
+            "environment_vars": [
+                "GO_VERSIONS=1.9.7,1.10.8,1.11.6,1.12.1",
+                "GO_DEFAULT=1.12.1"
+            ],
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Go.ps1"
             ]
         },
-         {
+        {
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-PHP.ps1"
@@ -306,7 +310,7 @@
                 "{{ template_dir }}/scripts/Installers/Install-SeleniumWebDrivers.ps1"
             ]
         },
-		{
+        {
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Enable-DeveloperMode.ps1"
@@ -314,13 +318,13 @@
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
         },
-		{
+        {
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-WinAppDriver.ps1"
             ]
         },
-		{
+        {
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-WinAppDriver.ps1"
@@ -422,6 +426,16 @@
         },
         {
             "type": "powershell",
+            "environment_vars": [
+                "BOOST_VERSIONS=1.69.0",
+                "BOOST_DEFAULT=1.69.0"
+            ],
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Install-Boost.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Mercurial.ps1"
             ]
@@ -468,7 +482,7 @@
                 "{{ template_dir }}/scripts/Installers/Install-CloudFoundryCli.ps1"
             ]
         },
-		{
+        {
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Install-Vcpkg.ps1"
@@ -499,7 +513,19 @@
         {
             "type": "powershell",
             "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-AzureDevOpsCli.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-ToolCache.ps1"
+            ]
+        },
+        {
+            "type": "powershell",
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Python.ps1"
             ]
         },
         {
@@ -510,15 +536,25 @@
         },
         {
             "type": "powershell",
-	    "environment_vars": [
-        	"GO_VERSIONS=1.9.7,1.10.8,1.11.5",
-        	"GO_DEFAULT=1.11.5"
-    	    ],
+            "environment_vars": [
+                "GO_VERSIONS=1.9.7,1.10.8,1.11.6,1.12.1",
+                "GO_DEFAULT=1.12.1"
+            ],
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-Go.ps1"
             ]
         },
-          {
+        {
+            "type": "powershell",
+            "environment_vars": [
+                "BOOST_VERSIONS=1.69.0",
+                "BOOST_DEFAULT=1.69.0"
+            ],
+            "scripts":[
+                "{{ template_dir }}/scripts/Installers/Validate-Boost.ps1"
+            ]
+        },
+        {
             "type": "powershell",
             "scripts":[
                 "{{ template_dir }}/scripts/Installers/Validate-PHP.ps1"
