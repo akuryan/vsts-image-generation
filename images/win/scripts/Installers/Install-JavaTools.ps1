@@ -51,11 +51,13 @@ Set-MachinePath -NewPath $newPath
 setx JAVA_HOME $latestJava8Install /M
 setx JAVA_HOME_8_X64 $latestJava8Install /M
 setx JAVA_HOME_11_X64 $latestJava11Install /M
+#to ensure that agent detects Java - set it here
+setx JAVA $latestJava8Install /M
 
 # Install Java tools
 # Force chocolatey to ignore dependencies on Ant and Maven or else they will download the Oracle JDK
-choco install ant -y
-choco install maven -y
+choco install ant -y -i
+choco install maven -y -i
 choco install gradle -y
 
 # Move maven variables to Machine. They may not be in the environment for this script so we need to read them from the registry.
